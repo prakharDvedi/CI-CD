@@ -12,9 +12,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                script {
-                    docker.build("cicd-node-service:${env.BUILD_ID}")
-                }
+                sh 'docker build -t cicd-node-service:${BUILD_ID} .'
+                sh 'docker tag cicd-node-service:${BUILD_ID} cicd-node-service:latest'
             }
         }
         
