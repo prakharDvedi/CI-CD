@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Internal CI/CD System Node Service",
+    message: "CI/CD System Service",
     status: "running",
   });
 });
